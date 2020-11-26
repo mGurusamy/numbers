@@ -5,14 +5,14 @@ import (
 )
 
 // Add - to calculate sum of two integers
-func Add(numbers ...int) (error, int) {
+func Add(numbers ...int) (int, error) {
 	sum := 0
 	if len(numbers) < 2 {
-		return errors.New("Minimum two arguments required for add function"), sum
+		return sum, errors.New("Minimum two arguments required for add function")
 	} else {
 		for _, num := range numbers {
 			sum = sum + num
 		}
 	}
-	return nil, sum
+	return sum, nil
 }
